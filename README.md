@@ -2,6 +2,6 @@
 
 - This game is completely Open Source, so feel free to fork and do whatever **THAT IS WITHIN THE BOUNDS OF THE LICENSE**
 
-===
+
 THIS GAME USES THE GENERAL PUBLIC LICENSE VERSION 2.
 ===
