@@ -29,6 +29,8 @@ public class v1 {
         System.out.println("The Text Slots Game!");
         Thread.sleep(1000);
         System.out.println("This program uses GNU General Public License v2\n");
+        Thread.sleep(2000);
+        screen.clear();
 
         while (true) {
             Thread.sleep(500);
@@ -70,6 +72,8 @@ public class v1 {
                     System.out.println("You loose!\n");
                     cash -= cost;
                 }
+                Thread.sleep(2000);
+                screen.clear();
             }
 
 
@@ -84,26 +88,36 @@ public class v1 {
                     Thread.sleep(500);
                     System.out.println("You have reached the maximum.");
                 }
+                Thread.sleep(2000);
+                screen.clear();
             }
 
             else if (input.equals("GIVEM")) {
                 System.out.println("\nDEVELOPER COMMAND 'GIVEM' USED. +1,000,000.\n");
                 cash += givem;
+                Thread.sleep(2000);
+                screen.clear();
             }
 
             else if (input.equals("REM")) {
                 System.out.println("\nDEVELOPER COMMAND 'REM' USED. REMOVING SPIN COSTS.\n");
                 cost -= remcom;
+                Thread.sleep(2000);
+                screen.clear();
             }
 
             else if (input.equals("END")) {
                 System.out.println("\nDEVELOPER COMMAND 'END' USED. REMOVING ALL CASH FROM WALLET.\n");
                 cash -= endcom;
+                Thread.sleep(2000);
+                screen.clear();
             }
 
             else if (input.equals("UP")) {
                 System.out.println("\nDEVELOPER COMMAND 'UP' USED. UPPING COST BY " + upcom + ".\n");
                 cost += upcom;
+                Thread.sleep(2000);
+                screen.clear();
             }
 
             else if (input.equals("CASHOFF")) {
@@ -113,6 +127,8 @@ public class v1 {
 
                 cash = cash - e;
                 System.out.printf("\n");
+                Thread.sleep(10000);
+                screen.clear();
             }
 
             else if (input.equals("CASHADD")) {
@@ -132,11 +148,16 @@ public class v1 {
                     Thread.sleep(500);
                     System.out.println("Input is either not an integer or an error.\n");
                 }
+                Thread.sleep(10000);
+                screen.clear();
             }
 
             else {
                 Thread.sleep(500);
                 System.out.println(input + " IS INVALID INPUT OR YOU HAVE LESS THAN REQUIRED FOR IT.\n");
+                
+                Thread.sleep(2000);
+                screen.clear();
             }
 
 
@@ -161,11 +182,16 @@ public class v1 {
                     System.out.println("\nNo? Alright... Well, you are out of money, you now have to leave ...");
                     break;
                 }
+                Thread.sleep(2000);
+                screen.clear();
             }
 
             else if (cash >= 2000000) {
                 Thread.sleep(500);
                 System.out.println("\nYou have officially reached $2,000,000+. You are now a rich man and won!");
+                
+                Thread.sleep(2000);
+                screen.clear();
                 break;
             }
         }
