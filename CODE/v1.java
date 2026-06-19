@@ -1,3 +1,11 @@
+/*>= is greater than or equal to
+<= is less than or equal to
+== is equal to*/
+
+//AMOUNT OF DEBUG TOOLS: 6
+//UPDATE THE ABOVE LINE EVERY TIME YOU ADD A DEBUG TOOL.
+
+
 import java.util.Scanner;
 import java.util.Random;
 import java.util.Locale;
@@ -34,7 +42,7 @@ public class v1 {
             //String input = Character.toUpperCase(a);
 
 
-            if (input.equals("S") && cash <= 2) {
+            if (input.equals("S") && cash >= 2) {
                 Thread.sleep(500);
                 System.out.println("\nTO WIN YOU NEED TO MATCH ALL NUMBERS");
                 int number1 = random.nextInt(7);
@@ -96,6 +104,34 @@ public class v1 {
             else if (input.equals("UP")) {
                 System.out.println("\nDEVELOPER COMMAND 'UP' USED. UPPING COST BY " + upcom + ".\n");
                 cost += upcom;
+            }
+
+            else if (input.equals("CASHOFF")) {
+                System.out.println("\nDEVELOPER COMMAND 'CASHOFF' USED.");
+                System.out.printf("How much cash to remove from your wallet: ");
+                int e = Input.nextInt();
+
+                cash = cash - e;
+                System.out.printf("\n");
+            }
+
+            else if (input.equals("CASHADD")) {
+                System.out.println("\nDEVELOPER COMMAND 'CASHADD' USED.");
+                System.out.printf("How much cash to add to your wallet: ");
+                int f = Input.nextInt();
+
+                if (f <= 2000000) {
+                    cash = cash + f;
+                    System.out.printf("\n");
+                }
+                else if (f >= 2000000) {
+                    Thread.sleep(500);
+                    System.out.println("Requested amount exceeds $2,000,000.\n");
+                }
+                else {
+                    Thread.sleep(500);
+                    System.out.println("Input is either not an integer or an error.\n");
+                }
             }
 
             else {
