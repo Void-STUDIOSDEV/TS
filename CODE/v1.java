@@ -7,23 +7,20 @@
 
 
 import java.util.Scanner;
-import java.util.Random;
 import java.util.Locale;
 
 public class v1 {
+    public static int jackpot = 1000000;
+    public static int earnings = 50;
+    public static int cash = 40;
+    public static int cost = 2;
+    public static int givem = 1000000;
+    public static  int remcom = cost;
+    public static int endcom = 10000000;
+    public static int upcom = cost;
+
     public static void main(String[] args) throws InterruptedException {
         Scanner Input = new Scanner(System.in);
-        Random random = new Random();
-        int jackpot = 1000000;
-        int earnings = 50;
-        int cash = 40;
-        int cost = 2;
-        int givem = 1000000;
-        int remcom = cost;
-        int endcom = 10000000;
-        int upcom = cost;
-
-
 
         Thread.sleep(1000);
         System.out.println("The Text Slots Game!");
@@ -41,38 +38,10 @@ public class v1 {
             System.out.printf("CHOICE: ");
             String a = Input.next();
             String input = a.toUpperCase(Locale.ROOT);
-            //String input = Character.toUpperCase(a);
 
 
             if (input.equals("S") && cash >= 2) {
-                Thread.sleep(500);
-                System.out.println("\nTO WIN YOU NEED TO MATCH ALL NUMBERS");
-                int number1 = random.nextInt(7);
-                int number2 = random.nextInt(7);
-                int number3 = random.nextInt(7);
-                int number4 = random.nextInt(7);
-                int number5 = random.nextInt(7);
-
-                Thread.sleep(500);
-                System.out.println("NUMBERS: " + number1 + number2 + number3 + number4 + number5);
-
-                if (number1 == number2 && number2 == number3 && number3 == number4 && number4 == number5) {
-                    System.out.println("CONGRATULATIONS. You have earned $50.");
-                    cash += earnings;
-                }
-                else if (number1 == 0 && number2 == 0 && number3 == 6 && number4 == 6 && number5 == 6) {
-                    System.out.println("WELL WELL WELL WELL WELL WELL WELL WELL... $666 FUNDED ...");
-                    cash += 666;
-                }
-                else if (number1 == 0 && number2 == 0 && number3 == 0 && number4 == 0 && number5 == 0) {
-                    System.out.println("JACKPOT ... JACKPOT ... PAYOUT: $" + jackpot);
-                    cash += jackpot;
-                }
-                else {
-                    System.out.println("You loose!\n");
-                    cash -= cost;
-                }
-                Thread.sleep(2000);
+                spin.wins();
                 screen.clear();
             }
 
@@ -92,65 +61,17 @@ public class v1 {
                 screen.clear();
             }
 
-            else if (input.equals("GIVEM")) {
-                System.out.println("\nDEVELOPER COMMAND 'GIVEM' USED. +1,000,000.\n");
-                cash += givem;
-                Thread.sleep(2000);
-                screen.clear();
+
+            else if (input.equals("COMMANDS")) {
+                Thread.sleep(500);
+                System.out.println("\nTYPE 'HELP' FOR LIST OF COMMANDS.");
+
+                Thread.sleep(500);
+                System.out.printf("COMMAND: ");
+                
+                commands.cheats();
             }
 
-            else if (input.equals("REM")) {
-                System.out.println("\nDEVELOPER COMMAND 'REM' USED. REMOVING SPIN COSTS.\n");
-                cost -= remcom;
-                Thread.sleep(2000);
-                screen.clear();
-            }
-
-            else if (input.equals("END")) {
-                System.out.println("\nDEVELOPER COMMAND 'END' USED. REMOVING ALL CASH FROM WALLET.\n");
-                cash -= endcom;
-                Thread.sleep(2000);
-                screen.clear();
-            }
-
-            else if (input.equals("UP")) {
-                System.out.println("\nDEVELOPER COMMAND 'UP' USED. UPPING COST BY " + upcom + ".\n");
-                cost += upcom;
-                Thread.sleep(2000);
-                screen.clear();
-            }
-
-            else if (input.equals("CASHOFF")) {
-                System.out.println("\nDEVELOPER COMMAND 'CASHOFF' USED.");
-                System.out.printf("How much cash to remove from your wallet: ");
-                int e = Input.nextInt();
-
-                cash = cash - e;
-                System.out.printf("\n");
-                Thread.sleep(10000);
-                screen.clear();
-            }
-
-            else if (input.equals("CASHADD")) {
-                System.out.println("\nDEVELOPER COMMAND 'CASHADD' USED.");
-                System.out.printf("How much cash to add to your wallet: ");
-                int f = Input.nextInt();
-
-                if (f <= 2000000) {
-                    cash = cash + f;
-                    System.out.printf("\n");
-                }
-                else if (f >= 2000000) {
-                    Thread.sleep(500);
-                    System.out.println("Requested amount exceeds $2,000,000.\n");
-                }
-                else {
-                    Thread.sleep(500);
-                    System.out.println("Input is either not an integer or an error.\n");
-                }
-                Thread.sleep(10000);
-                screen.clear();
-            }
 
             else {
                 Thread.sleep(500);
